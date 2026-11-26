@@ -1,0 +1,42 @@
+# Impact page. Only publish items you can link to a public source.
+# Each [[section]] becomes a heading with a list. An item is either plain text,
+# or { year = "2025", text = "..." } to show a year in front.
+# Text fields accept [link text](https://...) for links and *text* for italics.
+
+heading = "Research in policy and practice"
+intro = "Examples of research that has been cited in clinical guidelines and policy, used in practice, recognised or covered beyond academia. Each item links to its source."
+
+[[section]]
+title = "Guidelines and policy"
+items = [
+  "Cost-effectiveness analysis of vascular access referral policies in chronic kidney disease, cited in the [National Kidney Foundation KDOQI vascular access guideline updates](https://www.kidney.org/professionals/kdoqi/guidelines-and-commentaries/vascular-access).",
+  "Cost-effectiveness of MODY genetic testing, cited in a [US insurer medical policy on MODY genetic testing](https://www.bcbsm.com/amslibs/content/dam/public/mpr/mprsearch/pdf/2185449.pdf).",
+  "Cost-effectiveness of continuous glucose monitoring (DIAMOND trial), cited by the [Center for Health Care Strategies](https://www.chcs.org/resource-center-item/cost-effectiveness-of-continuous-glucose-monitoring-for-adults-with-type-1-diabetes-compared-with-self-monitoring-of-blood-glucose-the-diamond-randomized-trial) in payer resources on CGM reimbursement.",
+]
+
+[[section]]
+title = "Practice"
+items = [
+  "Cost-effectiveness of shared telemedicine appointments for young adults with type 1 diabetes (CoYoT1 trial) informed the [CoYoT1 to California](https://chan.usc.edu/research/completed-projects/coyot1-to-california-ctc-telemedicine-to-engage-young-adults-with-diabetes) pilot.",
+  "The productivity requirements of medical scribe programmes, discussed by the [American Medical Association](https://www.ama-assn.org/practice-management/sustainability/2-new-patients-day-medical-scribes-are-profitable-one-year).",
+  "The time needed to provide adult primary care, discussed by the [American Academy of Family Physicians](https://www.aafp.org/pubs/fpm/blogs/inpractice/entry/time-study.html).",
+]
+
+[[section]]
+title = "Recognition"
+items = [
+  { year = "2025", text = "Best Student Paper Finalist, AMIA Annual Symposium (heart transplant waitlist mortality)." },
+  { year = "2018", text = "[Tufts CEVR Cost-Effectiveness Analysis Paper of the Year](https://cevr.tuftsmedicalcenter.org/news/2019/2018poy) (individualised glycaemic control for US adults with type 2 diabetes)." },
+  { year = "2012", text = "Lusted Award Finalist, Society for Medical Decision Making." },
+]
+
+[[section]]
+title = "Media"
+items = [
+  "[Forbes](https://www.forbes.com/sites/saibala/2022/08/28/physicians-would-need-almost-27-hours-a-day-to-provide-optimal-patient-care-per-new-study/): physicians would need almost 27 hours a day to provide recommended primary care.",
+  "[Endocrinology Advisor](https://www.endocrinologyadvisor.com/news/sglt2-glp1-agents-cost-effective-diabetes/) and [PatientCareOnline](https://www.patientcareonline.com/view/sglt-2-inhibitors-glp-1-receptor-agonists-not-cost-effective-as-first-line-t2d-therapy): cost-effectiveness of first-line SGLT2 and GLP-1 therapy.",
+  "[Endocrinology Advisor](https://www.endocrinologyadvisor.com/news/individualized-glycemic-control-in-t2d-may-be-cost-effective): individualised glycaemic control in type 2 diabetes.",
+  "[News-Medical](https://www.news-medical.net/news/20251030/How-early-diabetes-management-influences-long-term-outcomes.aspx): how early diabetes management influences long-term outcomes.",
+  "[Healthcare Made Practical](https://www.hmpgloballearningnetwork.com/site/jcp/news/decision-analytical-model-optimizes-posttreatment-surveillance-strategies-among): risk-stratified surveillance after head and neck cancer treatment.",
+  "US PharmacoEconomics & Outcomes News: [medical scribes](https://link.springer.com/article/10.1007/s40274-020-7231-5) and [shared telemedicine appointments](https://link.springer.com/article/10.1007/s40274-019-6020-5).",
+]

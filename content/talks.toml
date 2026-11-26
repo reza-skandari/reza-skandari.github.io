@@ -1,0 +1,56 @@
+# Talks & Service page. Newest first; the page shows items in the order written here.
+# Text fields accept [link text](https://...) for links and *text* for italics.
+
+memberships = [
+  "Institute for Operations Research and the Management Sciences (INFORMS), including the Health Applications Society and the Manufacturing & Service Operations Management Society",
+  "Production and Operations Management Society (POMS)",
+  "EURO Working Group on Operational Research Applied to Health Services (ORAHS)",
+]
+
+[[talk]]
+year = "2027"
+text = "Bayes Business School, City St George's, University of London (upcoming)"
+
+[[talk]]
+year = "2026"
+text = "Scool project, Centre Inria de l'Université de Lille, France"
+
+[[talk]]
+year = "2026"
+text = "Institut Montpelliérain Alexander Grothendieck, University of Montpellier, France"
+
+[[talk]]
+year = "2025"
+text = "Plenary lecture, Markov, Semi-Markov Models and Associated Fields Workshop, Sorbonne University, Paris"
+
+[[talk]]
+year = "2023"
+text = "Center for Chronic Disease Research and Policy, University of Chicago"
+
+[[talk]]
+year = "2021"
+text = "European Technology and Operations Management Seminar Series"
+
+[[talk]]
+year = "2019"
+text = "Sauder School of Business, University of British Columbia"
+
+[[talk]]
+year = "2018"
+text = "University of Wisconsin-Madison; Imperial Business School; University of Tennessee; University of Cincinnati; State University of New York at Binghamton"
+
+[[talk]]
+year = "2016"
+text = "McGill University; Division of Nephrology, University of British Columbia; University of California, Merced; University of Alberta"
+
+[[service]]
+year = "2024–2026"
+text = "Elected member, International Council, INFORMS Health Applications Society"
+
+[[service]]
+year = "2025"
+text = "Healthcare cluster, INFORMS International Conference, Singapore"
+
+[[service]]
+text = "Referee for journals including *Management Science*, *Operations Research*, *Manufacturing & Service Operations Management*, *Production and Operations Management*, *Health Care Management Science*, *Health Economics*, *Heart*, *BMJ* and *Diabetes Care*"
+

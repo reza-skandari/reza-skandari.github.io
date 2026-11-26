@@ -1,0 +1,48 @@
+# Home page and site-wide details.
+# Text fields accept [link text](https://...) for links and *text* for italics.
+# After editing: python3 build.py, then commit and push.
+
+name  = "Reza Skandari"
+degree = "PhD"
+
+# Lines under your name on the home page, in order.
+title_lines = [
+  "Assistant Professor of Health Analytics and Operations",
+  "Imperial Business School",
+  "Imperial College London",
+]
+
+email = "r.skandari@imperial.ac.uk"
+
+# Buttons under your name (email is added first automatically).
+links = [
+  { label = "Imperial profile", url = "https://profiles.imperial.ac.uk/r.skandari" },
+  { label = "Google Scholar",   url = "https://scholar.google.com/citations?user=1Xc--mwAAAAJ&hl=en" },
+]
+
+# Where "Full publication list" points.
+full_publication_list = "https://profiles.imperial.ac.uk/r.skandari/publications"
+
+# How many of the newest journal articles to show on the home page.
+recent_publications = 5
+
+# Photo files in assets/ (1x for normal screens, 2x for high-resolution screens).
+photo    = "headshot.jpg"
+photo_2x = "headshot-2x.jpg"
+
+about = [
+  "My research asks how data and analytical methods can improve decisions in healthcare, for patients, clinicians, healthcare managers and policymakers alike. I develop methods in decision analytics, optimisation, machine learning and health economics, and apply them with clinical partners to chronic disease, cancer, organ transplantation and the organisation of care.",
+  "I am a member of the [Centre for Health Economics & Policy Innovation](https://www.imperial.ac.uk/business-school/faculty-research/research-centres/centre-health-economics-policy-innovation/) (CHEPI). Before joining Imperial in 2018, I was a Senior Research Analyst in the Department of Medicine at the University of Chicago. I received my PhD from the Sauder School of Business at the University of British Columbia.",
+]
+
+# Shown as tags, in this order.
+interests = [
+  "Reinforcement learning",
+  "Machine learning",
+  "Stochastic optimisation",
+  "Health economics",
+  "Medical decision-making",
+  "Healthcare operations",
+]
+
+prospective_students = "I welcome enquiries from prospective doctoral students with a strong background in statistics, machine learning, reinforcement learning or stochastic optimisation, who are interested in applying these methods to problems in healthcare. Please email me with a short description of your interests and background, and your CV."

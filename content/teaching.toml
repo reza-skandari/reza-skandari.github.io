@@ -1,0 +1,37 @@
+# Teaching page.
+# Text fields accept [link text](https://...) for links and *text* for italics.
+
+intro = "I teach quantitative and analytical modules on Business School and College-wide programmes. My teaching combines lectures with hands-on computing, case-based group work, simulations and student-led sessions."
+
+approach = [
+  "Students code in the browser with GitHub Codespaces, so nothing needs installing, and use GitHub workflows to practise the version-controlled collaboration used in industry. In-class exercises, quizzes and automated formative feedback show students straight away how they are progressing.",
+  "I teach students to treat generative AI as a collaborator to be questioned rather than an oracle: they use it for coding, data analysis and writing, but verify its output, keep their work reproducible and consider its ethical use.",
+]
+
+[[current]]
+name = "Data Structures and Algorithms with Python"
+programmes = "MSc Financial Technology, MSc Risk Management and Financial Engineering, MSc Business Analytics"
+
+[[current]]
+name = "Business analytics with AI-assisted coding"
+programmes = "MBA"
+
+[[previous]]
+name = "Project Management"
+programmes = "I-Explore, Imperial Horizons, Business for Professionals of Engineering and Science, MSc International Management, MSc Economics and Strategy for Business"
+
+[[previous]]
+name = "Decision Analytics"
+programmes = "MSc International Management"
+
+[[previous]]
+name = "Dynamic Programming"
+programmes = "Master of Research"
+
+[[previous]]
+name = "Simulation Modelling for Health Policy and Clinical Decision-Making"
+programmes = "Faculty Development Program, Department of Medicine, University of Chicago (2018, 2023)"
+
+[[award]]
+year = "2022"
+text = "Teaching Excellence Award in PhD Supervision, Imperial Business School."
