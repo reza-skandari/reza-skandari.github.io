@@ -33,11 +33,39 @@ text = "Sauder School of Business, University of British Columbia"
 
 [[talk]]
 year = "2018"
-text = "University of Wisconsin-Madison; Imperial Business School; University of Tennessee; University of Cincinnati; State University of New York at Binghamton"
+text = "University of Wisconsin-Madison"
+
+[[talk]]
+year = "2018"
+text = "Imperial Business School"
+
+[[talk]]
+year = "2018"
+text = "University of Tennessee"
+
+[[talk]]
+year = "2018"
+text = "University of Cincinnati"
+
+[[talk]]
+year = "2018"
+text = "State University of New York at Binghamton"
 
 [[talk]]
 year = "2016"
-text = "McGill University; Division of Nephrology, University of British Columbia; University of California, Merced; University of Alberta"
+text = "McGill University"
+
+[[talk]]
+year = "2016"
+text = "Division of Nephrology, University of British Columbia"
+
+[[talk]]
+year = "2016"
+text = "University of California, Merced"
+
+[[talk]]
+year = "2016"
+text = "University of Alberta"
 
 [[service]]
 year = "2024–2026"

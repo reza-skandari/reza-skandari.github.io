@@ -82,8 +82,8 @@ def section(heading, body, sid=None):
     return f'<section{attr}>\n<div class="section-label">{html.escape(heading)}</div>\n{body}\n</section>'
 
 
-def page_head(eyebrow, heading, intro=None):
-    out = f'<section>\n<div class="eyebrow">{html.escape(eyebrow)}</div>\n<h1>{html.escape(heading)}</h1>\n'
+def page_head(heading, intro=None):
+    out = f'<section>\n<h1>{html.escape(heading)}</h1>\n'
     if intro:
         out += f'<p class="muted" style="margin-top:10px">{md(intro)}</p>\n'
     return out + "</section>"
@@ -266,7 +266,7 @@ def research_page(site, research):
     note = (f'<p class="small">Recent publications are on the <a href="index.html#publications">home page</a>; '
             f'the full list is on my <a href="{html.escape(site["full_publication_list"])}">Imperial profile</a>.</p>')
     return "Research", "\n\n".join([
-        page_head("Research", research["heading"], research["intro"]),
+        page_head(research["heading"], research["intro"]),
         themes,
         f"<section>\n<h2>Current directions</h2>\n{item_list(research['direction'])}\n</section>",
         f"<section>\n<h2>Working papers</h2>\n{pub_list(preprints, working=True)}\n</section>",
@@ -277,7 +277,7 @@ def research_page(site, research):
 def impact_page(impact):
     blocks = [f"<section>\n<h2>{html.escape(s['title'])}</h2>\n{item_list(s['items'])}\n</section>"
               for s in impact["section"]]
-    return "Impact", "\n\n".join([page_head("Impact", impact["heading"], impact["intro"])] + blocks)
+    return "Impact", "\n\n".join([page_head(impact["heading"], impact["intro"])] + blocks)
 
 
 def teaching_page(teaching):
@@ -285,7 +285,7 @@ def teaching_page(teaching):
         return '<ul class="plain">\n' + "\n".join(
             f'<li><strong>{md(m["name"])}</strong><br><span class="muted small">{md(m["programmes"])}</span></li>'
             for m in items) + "\n</ul>"
-    parts = [page_head("Teaching", "Teaching", teaching["intro"]),
+    parts = [page_head("Teaching", teaching["intro"]),
              f"<section>\n<h2>Current modules</h2>\n{modules(teaching['current'])}\n</section>"]
     if teaching.get("previous"):
         parts.append(f"<section>\n<h2>Previous modules</h2>\n{modules(teaching['previous'])}\n</section>")
@@ -297,7 +297,7 @@ def teaching_page(teaching):
 
 def talks_page(talks):
     return "Talks & Service", "\n\n".join([
-        page_head("Talks & service", "Talks and service"),
+        page_head("Talks & Service"),
         f"<section>\n<h2>Invited talks</h2>\n{item_list(talks['talk'])}\n</section>",
         f"<section>\n<h2>Professional service</h2>\n{item_list(talks['service'])}\n</section>",
         f"<section>\n<h2>Memberships</h2>\n{item_list(talks['memberships'])}\n</section>",

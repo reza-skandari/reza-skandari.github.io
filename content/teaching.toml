@@ -19,7 +19,7 @@ name = "Data Structures and Algorithms with Python"
 # MSc Business Analytics & AI: https://www.imperial.ac.uk/business-school/study/masters/business-analytics/
 # MSc Financial Technology: https://www.imperial.ac.uk/study/courses/postgraduate-taught/financial-technology/
 # MSc Risk Management and Financial Engineering: https://www.imperial.ac.uk/study/courses/postgraduate-taught/risk-management-financial-engineering/
-programmes = "MSc Business Analytics & AI, MSc Financial Technology, MSc Risk Management and Financial Engineering"
+programmes = "MSc Business Analytics & AI · MSc Financial Technology · MSc Risk Management and Financial Engineering"
 
 [[previous]]
 name = "Project Management"
@@ -29,7 +29,7 @@ name = "Project Management"
 # Business for Professionals of Engineering and Science: https://www.imperial.ac.uk/business-school/study/undergraduate/bpes-modules/
 # MSc Global Health Management: https://www.imperial.ac.uk/business-school/study/masters/global-health-management/
 # MSc Economics and Strategy for Business: https://www.imperial.ac.uk/business-school/study/masters/economics-strategy-business/
-programmes = "I-Explore, Imperial Horizons, Business for Professionals of Engineering and Science, MSc Global Health Management, MSc Economics and Strategy for Business"
+programmes = "I-Explore · Imperial Horizons · Business for Professionals of Engineering and Science · MSc Global Health Management · MSc Economics and Strategy for Business"
 
 [[previous]]
 name = "Decision Analytics"
