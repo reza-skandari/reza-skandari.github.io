@@ -120,7 +120,7 @@ p + p { margin-top: 10px; }
 .hero { display: flex; gap: 24px; align-items: center; }
 .hero img {
   width: 170px;
-  aspect-ratio: 640 / 561;   /* the photo's own proportions, so nothing is cropped */
+  aspect-ratio: 170 / 212;   /* exact size of photo.jpg, so the browser never rescales it */
   object-fit: cover;
   object-position: center top;
   border-radius: 12px;
