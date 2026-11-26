@@ -10,23 +10,36 @@ approach = [
 
 [[current]]
 name = "Business analytics with AI-assisted coding"
-programmes = "[MBA](https://www.imperial.ac.uk/business-school/study/mba/)"
+# Previous programme link: https://www.imperial.ac.uk/business-school/study/mba/
+programmes = "MBA"
 
 [[current]]
 name = "Data Structures and Algorithms with Python"
-programmes = "[MSc Business Analytics & AI](https://www.imperial.ac.uk/business-school/study/masters/business-analytics/), [MSc Financial Technology](https://www.imperial.ac.uk/study/courses/postgraduate-taught/financial-technology/), [MSc Risk Management and Financial Engineering](https://www.imperial.ac.uk/study/courses/postgraduate-taught/risk-management-financial-engineering/)"
+# Previous programme links:
+# MSc Business Analytics & AI: https://www.imperial.ac.uk/business-school/study/masters/business-analytics/
+# MSc Financial Technology: https://www.imperial.ac.uk/study/courses/postgraduate-taught/financial-technology/
+# MSc Risk Management and Financial Engineering: https://www.imperial.ac.uk/study/courses/postgraduate-taught/risk-management-financial-engineering/
+programmes = "MSc Business Analytics & AI, MSc Financial Technology, MSc Risk Management and Financial Engineering"
 
 [[previous]]
 name = "Project Management"
-programmes = "[I-Explore](https://www.imperial.ac.uk/study/student-life/imperial-education/i-explore/), [Imperial Horizons](https://www.imperial.ac.uk/horizons/), [Business for Professionals of Engineering and Science](https://www.imperial.ac.uk/business-school/study/undergraduate/bpes-modules/), [MSc Global Health Management](https://www.imperial.ac.uk/business-school/study/masters/global-health-management/), [MSc Economics and Strategy for Business](https://www.imperial.ac.uk/business-school/study/masters/economics-strategy-business/)"
+# Previous programme links:
+# I-Explore: https://www.imperial.ac.uk/study/student-life/imperial-education/i-explore/
+# Imperial Horizons: https://www.imperial.ac.uk/horizons/
+# Business for Professionals of Engineering and Science: https://www.imperial.ac.uk/business-school/study/undergraduate/bpes-modules/
+# MSc Global Health Management: https://www.imperial.ac.uk/business-school/study/masters/global-health-management/
+# MSc Economics and Strategy for Business: https://www.imperial.ac.uk/business-school/study/masters/economics-strategy-business/
+programmes = "I-Explore, Imperial Horizons, Business for Professionals of Engineering and Science, MSc Global Health Management, MSc Economics and Strategy for Business"
 
 [[previous]]
 name = "Decision Analytics"
-programmes = "[MSc Global Health Management](https://www.imperial.ac.uk/business-school/study/masters/global-health-management/)"
+# Previous programme link: https://www.imperial.ac.uk/business-school/study/masters/global-health-management/
+programmes = "MSc Global Health Management"
 
 [[previous]]
 name = "Dynamic Programming"
-programmes = "[PhD in Analytics & Operations](https://www.imperial.ac.uk/business-school/study/phd/analytics/)"
+# Previous programme link: https://www.imperial.ac.uk/business-school/study/phd/analytics/
+programmes = "PhD in Analytics & Operations"
 
 [[previous]]
 name = "Simulation Modelling for Health Policy and Clinical Decision-Making"

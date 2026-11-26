@@ -16,10 +16,6 @@ year = "2026"
 text = "Scool project, Centre Inria de l'Université de Lille, France"
 
 [[talk]]
-year = "2026"
-text = "Institut Montpelliérain Alexander Grothendieck, University of Montpellier, France"
-
-[[talk]]
 year = "2025"
 text = "Plenary lecture, Markov, Semi-Markov Models and Associated Fields Workshop, Sorbonne University, Paris"
 
@@ -53,4 +49,3 @@ text = "Healthcare cluster, INFORMS International Conference, Singapore"
 
 [[service]]
 text = "Referee for journals including *Management Science*, *Operations Research*, *Manufacturing & Service Operations Management*, *Production and Operations Management*, *Health Care Management Science*, *Health Economics*, *Heart*, *BMJ* and *Diabetes Care*"
-
