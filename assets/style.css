@@ -184,6 +184,7 @@ p + p { margin-top: 10px; }
 /* ── Lists ── */
 ul.plain { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 ul.plain li { padding-left: 14px; border-left: 2px solid var(--border); }
+ul.plain li:hover { border-left-color: var(--accent); }
 ul.plain li .when { color: var(--text-2); font-size: 13px; font-variant-numeric: tabular-nums; }
 
 /* ── Publications ── */
