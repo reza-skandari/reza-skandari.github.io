@@ -32,15 +32,15 @@ TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title} | M. Reza Skandari</title>
-<meta name="description" content="M. Reza Skandari, Assistant Professor of Health Analytics and Operations, Imperial Business School, Imperial College London.">
+<title>{title} | Reza Skandari</title>
+<meta name="description" content="Reza Skandari, Assistant Professor of Health Analytics and Operations, Imperial Business School, Imperial College London.">
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/theme.js"></script>
 </head>
 <body>
 <main class="page">
 <header class="top-bar">
-  <a class="brand" href="index.html">M. Reza Skandari</a>
+  <a class="brand" href="index.html">Reza Skandari</a>
   <nav>
 {nav}
     <button class="theme-toggle" type="button" aria-label="Switch colour theme">Dark mode</button>
@@ -49,7 +49,7 @@ TEMPLATE = """<!DOCTYPE html>
 {content}
 </main>
 <footer>
-  <span>&copy; {year} M. Reza Skandari &middot; Imperial Business School, Imperial College London</span>
+  <span>&copy; {year} Reza Skandari &middot; Imperial Business School, Imperial College London</span>
   <span>Last updated {updated}</span>
 </footer>
 </body>
