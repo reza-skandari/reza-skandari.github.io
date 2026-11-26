@@ -171,6 +171,9 @@ p + p { margin-top: 10px; }
 .small-tags li { font-size: 12px; padding: 2px 9px; }
 
 /* ── Cards ── */
+.card, ul.plain li, ol.pubs li {
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -180,12 +183,24 @@ p + p { margin-top: 10px; }
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .cards .card:last-child:nth-child(odd) { grid-column: 1 / -1; }   /* an odd last card spans both columns */
 .card p { font-size: 14px; color: var(--text-2); }
+@media (hover: hover) {
+  .card:hover, ul.plain li:hover, ol.pubs li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(27, 43, 59, .06);
+  }
+  .card:hover { border-color: var(--accent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, ul.plain li, ol.pubs li { transition: none; }
+  .card:hover, ul.plain li:hover, ol.pubs li:hover { transform: none; }
+}
 
 /* ── Lists ── */
 ul.plain { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 ul.plain li { padding-left: 14px; border-left: 2px solid var(--border); }
 ul.plain li:hover { border-left-color: var(--accent); }
 ul.plain li .when { color: var(--text-2); font-size: 13px; font-variant-numeric: tabular-nums; }
+ul.plain li.year-continuation { padding-left: 50px; border-left: 0; }
 
 /* ── Publications ── */
 ol.pubs { list-style: none; display: flex; flex-direction: column; gap: 14px; }

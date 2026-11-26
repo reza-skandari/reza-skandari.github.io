@@ -64,16 +64,23 @@ def paragraphs(items):
     return "\n".join(f"<p>{md(p)}</p>" for p in items)
 
 
-def item_list(items):
+def item_list(items, show_year_once=False):
     """Items are strings, or tables with optional 'year', optional 'title', and 'text'."""
     lis = []
+    previous_year = None
     for it in items:
         if isinstance(it, str):
             lis.append(f"<li>{md(it)}</li>")
+            previous_year = None
             continue
-        head = f'<span class="when">{html.escape(it["year"])}</span> &middot; ' if it.get("year") else ""
+        year = it.get("year")
+        show_year = year and (not show_year_once or year != previous_year)
+        continuation = show_year_once and year and year == previous_year
+        head = f'<span class="when">{html.escape(year)}</span> &middot; ' if show_year else ""
         title = f"<strong>{md(it['title'])}</strong> " if it.get("title") else ""
-        lis.append(f"<li>{head}{title}{md(it['text'])}</li>")
+        row_class = ' class="year-continuation"' if continuation else ""
+        lis.append(f"<li{row_class}>{head}{title}{md(it['text'])}</li>")
+        previous_year = year
     return '<ul class="plain">\n' + "\n".join(lis) + "\n</ul>"
 
 
@@ -298,7 +305,7 @@ def teaching_page(teaching):
 def talks_page(talks):
     return "Talks & Service", "\n\n".join([
         page_head("Talks & Service"),
-        f"<section>\n<h2>Invited talks</h2>\n{item_list(talks['talk'])}\n</section>",
+        f"<section>\n<h2>Invited talks</h2>\n{item_list(talks['talk'], show_year_once=True)}\n</section>",
         f"<section>\n<h2>Professional service</h2>\n{item_list(talks['service'])}\n</section>",
         f"<section>\n<h2>Memberships</h2>\n{item_list(talks['memberships'])}\n</section>",
     ])
