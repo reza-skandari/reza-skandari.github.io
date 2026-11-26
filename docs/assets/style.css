@@ -102,23 +102,31 @@ h1 {
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
-h2 {
-  font-size: 19px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+
 h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
 p + p { margin-top: 10px; }
 .muted { color: var(--text-2); }
 .small { font-size: 13px; }
 
-.section-label {
-  font-size: 10px;
+/* Section headings: clear size and contrast, with a short accent bar. */
+.section-label, h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
   font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--text-2);
-  margin-bottom: 12px;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.section-label::before, h2::before {
+  content: "";
+  width: 4px;
+  height: 1.1em;
+  border-radius: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 /* ── Home hero ── */
