@@ -2,7 +2,7 @@
 # Text fields accept [link text](https://...) for links and *text* for italics.
 
 heading = "Better decisions for healthcare"
-intro = "My research brings decision analytics, optimisation, machine learning and health economics to five connected problems. The work is collaborative, with clinicians, health economists and data scientists at Imperial, in the NHS and at universities in the United States."
+intro = "My research brings decision analytics, optimisation, machine learning and health economics to four connected problems. The work is collaborative, with clinicians, health economists and data scientists at Imperial, in the NHS and at universities in the United States."
 
 [[theme]]
 title = "Personalised and stratified care"
@@ -10,19 +10,9 @@ card  = "Treatment plans that learn from each patient's data, and care designs t
 text  = "Clinical guidelines often treat patients alike, yet patients differ in how their disease progresses and how they respond to care. *Bayes-adaptive treatment design* learns about each patient's disease trajectory as data accumulate and adapts treatment accordingly. *Stratified care* groups patients so that care is tailored to clinically meaningful groups while remaining simple enough to implement. Applications include preparing patients with kidney disease for dialysis and tailoring follow-up after cancer treatment."
 
 [[theme]]
-title = "Designing care for chronic disease"
-card  = "When and how to monitor, screen and intervene in conditions such as kidney disease and cystic fibrosis."
-text  = "This work asks when and how to monitor, screen and intervene. Examples include the timing of vascular access for patients approaching dialysis and screening for hearing loss in people with cystic fibrosis."
-
-[[theme]]
-title = "Cancer surveillance and care"
-card  = "When and how to follow patients after cancer treatment, tailoring scans and blood tests for tumour DNA to each patient's risk."
-text  = "After treatment, patients are monitored for years to detect cancer recurrence. Earlier detection improves outcomes, but frequent scans are costly and burdensome. This work designs risk-adapted surveillance: decision models that tailor follow-up schedules to each patient's risk of recurrence, and strategies that combine imaging with blood tests for circulating tumour DNA (ctDNA), which can signal recurrence without radiation but cannot locate the tumour. In head and neck cancer, tailored schedules can detect recurrence earlier without additional scans."
-
-[[theme]]
-title = "The value of medical innovations"
-card  = "Cost-effectiveness of new medicines, devices, diagnostics and models of care, especially in diabetes."
-text  = "Cost-effectiveness and decision models estimate how new technologies affect lifetime health outcomes and costs. Studies cover continuous glucose monitoring and insulin pumps, genetic testing for monogenic diabetes, shared telemedicine appointments for young adults with type 1 diabetes, first-line diabetes medicines, and a new multi-ethnic model of type 2 diabetes outcomes in the US. Several of these studies have been taken up in guidelines, payer resources and practice; see [Impact](impact.html)."
+title = "Designing care for chronic disease and cancer"
+card  = "When and how to screen, monitor, treat and follow up patients with long-term conditions such as cancer, kidney disease and cystic fibrosis."
+text  = "This work asks when and how to screen, monitor and intervene across the course of a disease. In cancer, it spans detecting recurrence early, tailoring follow-up to each patient's risk of recurrence, monitoring response to treatment, and combining imaging with blood tests for circulating tumour DNA (ctDNA), which can signal recurrence without radiation but cannot locate the tumour. Other examples include the timing of vascular access for patients approaching dialysis and screening for hearing loss in people with cystic fibrosis."
 
 [[theme]]
 title = "The organisation of care"
@@ -30,6 +20,12 @@ card  = "Clinician workload, new care models and decision support, from primary 
 text  = "This strand studies pressures on clinicians and how care can be delivered sustainably: the time needed to provide recommended primary care, the productivity required for medical scribes to be cost-neutral, and how emergency operating-theatre performance is measured. In heart transplantation, machine-learning models built on US national registry data aim to support decisions about accepting a donor heart."
 
 # "Current directions" list on the Research page.
+
+[[theme]]
+title = "The value of medical innovations"
+card  = "Cost-effectiveness of new medicines, devices, diagnostics and models of care, especially in diabetes."
+text  = "Cost-effectiveness and decision models estimate how new technologies affect lifetime health outcomes and costs. Studies cover continuous glucose monitoring and insulin pumps, genetic testing for monogenic diabetes, shared telemedicine appointments for young adults with type 1 diabetes, first-line diabetes medicines, and a new multi-ethnic model of type 2 diabetes outcomes in the US. Several of these studies have been taken up in guidelines, payer resources and practice; see [Impact](impact.html)."
+
 [[direction]]
 title = "Decision support for heart transplantation."
 text  = "Moving from prediction to learning organ-acceptance strategies from historical offer data with causal reinforcement learning, with colleagues at Carnegie Mellon University and the Medical University of South Carolina."
