@@ -19,7 +19,7 @@ OUT = ROOT / "docs"
 MY_LAST = "Skandari"
 SITE_URL = "https://reza-skandari.github.io/"
 FULL_LIST_URL = "https://profiles.imperial.ac.uk/r.skandari/publications"
-SELECTED = [  # shown on the Publications page; the first HOME_COUNT listed here also on Home
+SELECTED = [  # shown on the Home page
     "luo2026expanded",
     "10.1001/jamanetworkopen.2022.7240",
     "skandari2021patient",
@@ -27,12 +27,11 @@ SELECTED = [  # shown on the Publications page; the first HOME_COUNT listed here
     "porter2023revisiting",
     "laiteerapong2018individualized",
 ]
-HOME_COUNT = 4
+HOME_COUNT = len(SELECTED)
 
 NAV = [
     ("index.html", "Home"),
     ("research.html", "Research"),
-    ("publications.html", "Publications"),
     ("impact.html", "Impact"),
     ("teaching.html", "Teaching"),
     ("talks.html", "Talks & Service"),
@@ -226,18 +225,17 @@ def pub_list(items):
     return '<ol class="pubs">\n' + "\n".join(pub_item(e) for e in items) + "\n</ol>"
 
 
-def publications_page():
-    pre = sorted(read_bib(ROOT / "data" / "preprints.bib"), key=sort_key)
-    return "\n".join([
-        "<!-- title: Publications -->",
-        '<section>\n<div class="eyebrow">Publications</div>\n<h1>Selected publications</h1>\n'
-        f'<p class="muted" style="margin-top:10px">A selection of my work. For the full list, see my '
-        f'<a href="{FULL_LIST_URL}">Imperial profile</a>; for citations, my '
-        '<a href="https://scholar.google.com/citations?user=1Xc--mwAAAAJ&amp;hl=en">Google Scholar profile</a>.</p>\n</section>',
-        f"<section>\n{pub_list(selected_publications())}\n"
-        f'<p class="small" style="margin-top:14px"><a href="{FULL_LIST_URL}">Full publication list on my Imperial profile &rarr;</a></p>\n</section>',
-        f"<section>\n<h2>Working papers</h2>\n{pub_list(pre)}\n</section>",
-    ])
+def working_papers():
+    return pub_list(sorted(read_bib(ROOT / "data" / "preprints.bib"), key=sort_key))
+
+
+REDIRECT = """<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Publications | Reza Skandari</title>
+<meta http-equiv="refresh" content="0; url={url}">
+<link rel="canonical" href="{url}">
+</head><body><p>My full publication list is on my <a href="{url}">Imperial profile</a>.</p></body></html>
+"""
 
 
 def home_publications():
@@ -255,6 +253,7 @@ def render(name, content):
         for href, label in NAV)
     today = datetime.date.today()
     body = body.replace("<!-- selected-publications -->", home_publications())
+    body = body.replace("<!-- working-papers -->", working_papers())
     return TEMPLATE.format(title=html.escape(title), nav=nav, content=body.strip(),
                            site=SITE_URL, page="" if name == "index.html" else name,
                            year=today.year, updated=today.strftime("%B %Y"))
@@ -267,7 +266,8 @@ def main():
     shutil.copytree(ROOT / "assets", OUT / "assets")
     for src in sorted((ROOT / "src").glob("*.html")):
         (OUT / src.name).write_text(render(src.name, src.read_text(encoding="utf-8")), encoding="utf-8")
-    (OUT / "publications.html").write_text(render("publications.html", publications_page()), encoding="utf-8")
+    # the old Publications page now forwards to the full list on the Imperial profile
+    (OUT / "publications.html").write_text(REDIRECT.format(url=FULL_LIST_URL), encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
     print("Built:", ", ".join(sorted(p.name for p in OUT.glob("*.html"))))
 
