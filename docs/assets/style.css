@@ -119,8 +119,8 @@ p + p { margin-top: 10px; }
 /* ── Home hero ── */
 .hero { display: flex; gap: 24px; align-items: center; }
 .hero img {
-  width: 150px;
-  aspect-ratio: 612 / 839;   /* the photo's own proportions, so nothing is cropped */
+  width: 170px;
+  aspect-ratio: 640 / 561;   /* the photo's own proportions, so nothing is cropped */
   object-fit: cover;
   object-position: center top;
   border-radius: 12px;
