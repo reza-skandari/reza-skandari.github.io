@@ -7,7 +7,7 @@ intro = "My research brings decision analytics, optimisation, machine learning a
 [[theme]]
 title = "Personalised and stratified care"
 card  = "Treatment plans that learn from each patient's data, and care designs that are tailored yet simple enough to implement."
-text  = "Clinical guidelines often treat patients alike, yet patients differ in how their disease progresses and how they respond to care. *Bayes-adaptive treatment design* learns about each patient's disease trajectory as data accumulate and adapts treatment accordingly. *Stratified care* groups patients so that care is tailored to clinically meaningful groups while remaining simple enough to implement. Applications include preparing patients with kidney disease for dialysis and tailoring follow-up after cancer treatment."
+text  = "Clinical guidelines often treat patients alike, yet patients differ in how their disease progresses and how they respond to care. *Bayes-adaptive treatment design* learns about each patient's disease trajectory as data accumulate and adapts treatment accordingly. *Stratified care* groups patients so that care is tailored to clinically meaningful groups while remaining simple enough to implement. Applications include cancer and chronic disease care."
 
 [[theme]]
 title = "Designing care for chronic disease and cancer"
