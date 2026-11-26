@@ -187,8 +187,13 @@ def authors(field):
     return ", ".join(names[:-1]) + (", & " if len(names) > 1 else "") + names[-1]
 
 
-def pub_item(e):
+def pub_item(e, working=False):
     title = tex(e.get("title", "")).rstrip(".")
+    if working:   # working papers: authors, year and a title linked to the posted paper
+        url = e.get("url") or (f'https://doi.org/{e["doi"]}' if e.get("doi") else "")
+        t = f'<a href="{html.escape(url)}">{title}</a>' if url else title
+        return f'<li>{authors(e.get("author", ""))} ({e.get("year", "")}). <span class="pub-title">{t}.</span></li>'
+
     parts = [f'{authors(e.get("author", ""))} ({e.get("year", "")}).',
              f'<span class="pub-title">{title}.</span>']
     venue = e.get("journal") or e.get("howpublished") or e.get("school")
@@ -217,8 +222,8 @@ def sort_key(e):
     return (-year, -month, e.get("title", ""))
 
 
-def pub_list(entries):
-    return '<ol class="pubs">\n' + "\n".join(pub_item(e) for e in entries) + "\n</ol>"
+def pub_list(entries, working=False):
+    return '<ol class="pubs">\n' + "\n".join(pub_item(e, working) for e in entries) + "\n</ol>"
 
 
 # ── Pages ────────────────────────────────────────────────────────────────
@@ -266,7 +271,7 @@ def research_page(site, research):
         page_head("Research", research["heading"], research["intro"]),
         themes,
         f"<section>\n<h2>Current directions</h2>\n{item_list(research['direction'])}\n</section>",
-        f"<section>\n<h2>Working papers</h2>\n{pub_list(preprints)}\n</section>",
+        f"<section>\n<h2>Working papers</h2>\n{pub_list(preprints, working=True)}\n</section>",
         note,
     ])
 
