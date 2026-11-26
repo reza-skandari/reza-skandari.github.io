@@ -120,9 +120,11 @@ p + p { margin-top: 10px; }
 /* ── Home hero ── */
 .hero { display: flex; gap: 24px; align-items: center; }
 .hero img {
-  width: 132px; height: 132px;
+  width: 150px;
+  aspect-ratio: 612 / 839;   /* the photo's own proportions, so nothing is cropped */
   object-fit: cover;
-  border-radius: 50%;
+  object-position: center top;
+  border-radius: 12px;
   border: 1px solid var(--border);
   flex-shrink: 0;
 }
