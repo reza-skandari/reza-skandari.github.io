@@ -19,15 +19,7 @@ OUT = ROOT / "docs"
 MY_LAST = "Skandari"
 SITE_URL = "https://reza-skandari.github.io/"
 FULL_LIST_URL = "https://profiles.imperial.ac.uk/r.skandari/publications"
-SELECTED = [  # shown on the Home page
-    "luo2026expanded",
-    "10.1001/jamanetworkopen.2022.7240",
-    "skandari2021patient",
-    "Annals2:2020",
-    "porter2023revisiting",
-    "laiteerapong2018individualized",
-]
-HOME_COUNT = len(SELECTED)
+RECENT_COUNT = 5   # newest journal articles shown on the Home page
 
 NAV = [
     ("index.html", "Home"),
@@ -213,12 +205,9 @@ def sort_key(e):
     return (-int(re.sub(r"\D", "", e.get("year", "0")) or 0), e.get("title", ""))
 
 
-def selected_publications():
-    pubs = {e["_key"]: e for e in read_bib(ROOT / "data" / "publications.bib")}
-    missing = [k for k in SELECTED if k not in pubs]
-    if missing:
-        raise SystemExit(f"SELECTED keys not in publications.bib: {missing}")
-    return sorted((pubs[k] for k in SELECTED), key=sort_key)
+def recent_publications():
+    pubs = [e for e in read_bib(ROOT / "data" / "publications.bib") if e["_type"] == "article"]
+    return sorted(pubs, key=sort_key)[:RECENT_COUNT]
 
 
 def pub_list(items):
@@ -239,8 +228,7 @@ REDIRECT = """<!DOCTYPE html>
 
 
 def home_publications():
-    keep = set(SELECTED[:HOME_COUNT])
-    return pub_list([e for e in selected_publications() if e["_key"] in keep])
+    return pub_list(recent_publications())
 
 
 # ── Build ────────────────────────────────────────────────────────────────
@@ -252,7 +240,7 @@ def render(name, content):
         f'    <a href="{href}"{" class=\"active\"" if href == name else ""}>{html.escape(label)}</a>'
         for href, label in NAV)
     today = datetime.date.today()
-    body = body.replace("<!-- selected-publications -->", home_publications())
+    body = body.replace("<!-- recent-publications -->", home_publications())
     body = body.replace("<!-- working-papers -->", working_papers())
     return TEMPLATE.format(title=html.escape(title), nav=nav, content=body.strip(),
                            site=SITE_URL, page="" if name == "index.html" else name,
