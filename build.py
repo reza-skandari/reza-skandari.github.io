@@ -17,6 +17,17 @@ import shutil
 ROOT = pathlib.Path(__file__).resolve().parent
 OUT = ROOT / "docs"
 MY_LAST = "Skandari"
+SITE_URL = "https://reza-skandari.github.io/"
+FULL_LIST_URL = "https://profiles.imperial.ac.uk/r.skandari/publications"
+SELECTED = [  # shown on the Publications page; the first HOME_COUNT listed here also on Home
+    "luo2026expanded",
+    "10.1001/jamanetworkopen.2022.7240",
+    "skandari2021patient",
+    "Annals2:2020",
+    "porter2023revisiting",
+    "laiteerapong2018individualized",
+]
+HOME_COUNT = 4
 
 NAV = [
     ("index.html", "Home"),
@@ -34,6 +45,13 @@ TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} | Reza Skandari</title>
 <meta name="description" content="Reza Skandari, Assistant Professor of Health Analytics and Operations, Imperial Business School, Imperial College London.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reza Skandari | Health Analytics and Operations">
+<meta property="og:description" content="Assistant Professor of Health Analytics and Operations, Imperial Business School, Imperial College London.">
+<meta property="og:image" content="{site}assets/headshot-2x.jpg">
+<meta property="og:url" content="{site}{page}">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/style.css">
 <script src="assets/theme.js"></script>
 </head>
@@ -41,9 +59,12 @@ TEMPLATE = """<!DOCTYPE html>
 <main class="page">
 <header class="top-bar">
   <a class="brand" href="index.html">Reza Skandari</a>
-  <nav>
+  <div class="bar-actions">
+    <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme"></button>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">&#9776;</button>
+  </div>
+  <nav id="site-nav">
 {nav}
-    <button class="theme-toggle" type="button" aria-label="Switch colour theme">Dark mode</button>
   </nav>
 </header>
 {content}
@@ -150,6 +171,13 @@ def authors(field):
         names.append(f'<span class="me">{name}</span>' if last == MY_LAST else name)
     if names and names[-1] == "et al.":
         return ", ".join(names[:-1]) + ", et al."
+    if len(names) > 8:
+        me = next((i for i, n in enumerate(names) if 'class="me"' in n), None)
+        short = names[:6] + ["&hellip;"]
+        if me is not None and 6 <= me < len(names) - 1:
+            short += [names[me], "&hellip;"]
+        names = short + [names[-1]]
+        return ", ".join(names[:-1]) + ", & " + names[-1]
     return ", ".join(names[:-1]) + (", & " if len(names) > 1 else "") + names[-1]
 
 
@@ -186,26 +214,35 @@ def sort_key(e):
     return (-int(re.sub(r"\D", "", e.get("year", "0")) or 0), e.get("title", ""))
 
 
+def selected_publications():
+    pubs = {e["_key"]: e for e in read_bib(ROOT / "data" / "publications.bib")}
+    missing = [k for k in SELECTED if k not in pubs]
+    if missing:
+        raise SystemExit(f"SELECTED keys not in publications.bib: {missing}")
+    return sorted((pubs[k] for k in SELECTED), key=sort_key)
+
+
+def pub_list(items):
+    return '<ol class="pubs">\n' + "\n".join(pub_item(e) for e in items) + "\n</ol>"
+
+
 def publications_page():
-    pubs = read_bib(ROOT / "data" / "publications.bib")
-    pre = read_bib(ROOT / "data" / "preprints.bib")
-    articles = sorted([e for e in pubs if e["_type"] == "article"], key=sort_key)
-    theses = [e for e in pubs if e["_type"] == "thesis"]
-    pre = sorted(pre, key=sort_key)
-
-    def block(title, items):
-        lis = "\n".join(pub_item(e) for e in items)
-        return f"<section>\n<h2>{title}</h2>\n<ol class=\"pubs\">\n{lis}\n</ol>\n</section>"
-
+    pre = sorted(read_bib(ROOT / "data" / "preprints.bib"), key=sort_key)
     return "\n".join([
         "<!-- title: Publications -->",
-        '<section>\n<div class="eyebrow">Publications</div>\n<h1>Publications</h1>\n'
-        '<p class="muted" style="margin-top:10px">Authors are listed in the order published. '
-        'For citation information, see my <a href="https://scholar.google.com/citations?user=1Xc--mwAAAAJ&amp;hl=en">Google Scholar profile</a>.</p>\n</section>',
-        block("Journal articles", articles),
-        block("Preprints and working papers", pre),
-        block("Doctoral thesis", theses),
+        '<section>\n<div class="eyebrow">Publications</div>\n<h1>Selected publications</h1>\n'
+        f'<p class="muted" style="margin-top:10px">A selection of my work. For the full list, see my '
+        f'<a href="{FULL_LIST_URL}">Imperial profile</a>; for citations, my '
+        '<a href="https://scholar.google.com/citations?user=1Xc--mwAAAAJ&amp;hl=en">Google Scholar profile</a>.</p>\n</section>',
+        f"<section>\n{pub_list(selected_publications())}\n"
+        f'<p class="small" style="margin-top:14px"><a href="{FULL_LIST_URL}">Full publication list on my Imperial profile &rarr;</a></p>\n</section>',
+        f"<section>\n<h2>Working papers</h2>\n{pub_list(pre)}\n</section>",
     ])
+
+
+def home_publications():
+    keep = set(SELECTED[:HOME_COUNT])
+    return pub_list([e for e in selected_publications() if e["_key"] in keep])
 
 
 # ── Build ────────────────────────────────────────────────────────────────
@@ -217,7 +254,9 @@ def render(name, content):
         f'    <a href="{href}"{" class=\"active\"" if href == name else ""}>{html.escape(label)}</a>'
         for href, label in NAV)
     today = datetime.date.today()
+    body = body.replace("<!-- selected-publications -->", home_publications())
     return TEMPLATE.format(title=html.escape(title), nav=nav, content=body.strip(),
+                           site=SITE_URL, page="" if name == "index.html" else name,
                            year=today.year, updated=today.strftime("%B %Y"))
 
 

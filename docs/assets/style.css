@@ -72,16 +72,21 @@ nav a {
 }
 nav a.active { color: var(--accent); font-weight: 600; }
 nav a:hover { color: var(--text); text-decoration: none; }
-.theme-toggle {
+.bar-actions { display: flex; gap: 6px; align-items: center; order: 3; }
+.theme-toggle, .menu-toggle {
   background: none;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text-2);
-  font-size: 12px;
-  padding: 3px 9px;
+  font-size: 15px;
+  line-height: 1;
+  width: 32px; height: 30px;
   cursor: pointer;
 }
-.theme-toggle:hover { color: var(--text); }
+.theme-toggle:hover, .menu-toggle:hover { color: var(--text); border-color: var(--text-2); }
+.menu-toggle { display: none; font-size: 17px; }
+nav { order: 2; margin-left: auto; }
+.brand { order: 1; }
 
 /* ── Headings and text ── */
 .eyebrow {
@@ -122,6 +127,7 @@ p + p { margin-top: 10px; }
   width: 170px;
   aspect-ratio: 170 / 212;   /* exact size of photo.jpg, so the browser never rescales it */
   object-fit: cover;
+  height: auto;              /* scale with width; never stretch or crop */
   object-position: center top;
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -137,6 +143,17 @@ p + p { margin-top: 10px; }
   background: var(--surface);
 }
 .links a:hover { text-decoration: none; border-color: var(--accent); }
+
+/* ── Interest tags ── */
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li {
+  font-size: 13px;
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
 
 /* ── Cards ── */
 .card {
@@ -157,7 +174,7 @@ ul.plain li .when { color: var(--text-2); font-size: 13px; font-variant-numeric:
 ol.pubs { list-style: none; display: flex; flex-direction: column; gap: 14px; }
 ol.pubs li { padding-left: 14px; border-left: 2px solid var(--border); font-size: 14px; }
 ol.pubs li:hover { border-left-color: var(--accent); }
-.pub-title { font-weight: 600; }
+.pub-title { font-weight: normal; color: var(--text); }
 .pub-meta { color: var(--text-2); }
 .pub-note { color: var(--text-2); font-size: 13px; font-style: italic; margin-top: 2px; }
 .pub-links a { font-size: 12px; margin-right: 10px; }
@@ -179,8 +196,29 @@ footer {
 footer span, footer a { font-size: 12px; color: var(--text-2); }
 
 /* ── Mobile ── */
+@media (max-width: 720px) {
+  /* phone layout: menu behind a hamburger button */
+  .menu-toggle { display: inline-block; }
+  .bar-actions { margin-left: auto; order: 2; }
+  nav {
+    order: 3;
+    display: none;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 6px;
+  }
+  nav.open { display: flex; }
+  nav a { font-size: 15px; padding: 9px 2px; border-bottom: 1px solid var(--border); }
+  nav a:last-child { border-bottom: none; }
+}
 @media (max-width: 560px) {
   body { padding: 0 14px; }
-  .hero { flex-direction: column; align-items: flex-start; }
+  .hero { gap: 16px; align-items: center; }
+  .hero img { width: 96px; }
+  .hero .role { font-size: 13px; }
   .cards { grid-template-columns: 1fr; }
 }
