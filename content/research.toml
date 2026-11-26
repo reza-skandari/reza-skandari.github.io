@@ -1,4 +1,5 @@
 # Research page. Each [[theme]] also appears as a card on the home page (using "card").
+# "applications" are shown as small tags under the theme on the Research page.
 # Text fields accept [link text](https://...) for links and *text* for italics.
 
 heading = "Better decisions for healthcare"
@@ -7,24 +8,28 @@ intro = "My research brings decision analytics, optimisation, machine learning a
 [[theme]]
 title = "Personalised and stratified care"
 card  = "Treatment plans that learn from each patient's data, and care designs that are tailored yet simple enough to implement."
-text  = "Clinical guidelines often treat patients alike, yet patients differ in how their disease progresses and how they respond to care. *Bayes-adaptive treatment design* learns about each patient's disease trajectory as data accumulate and adapts treatment accordingly. *Stratified care* groups patients so that care is tailored to clinically meaningful groups while remaining simple enough to implement. Applications include cancer and chronic disease care."
+text  = "Clinical guidelines often treat patients alike, yet patients differ in how their disease progresses and how they respond to care. *Bayes-adaptive treatment design* learns about each patient's disease trajectory as data accumulate and adapts treatment accordingly. *Stratified care* groups patients so that care is tailored to clinically meaningful groups while remaining simple enough to implement."
+applications = ["Chronic kidney disease", "Cancer surveillance", "Heart transplantation"]
 
 [[theme]]
 title = "Designing care for chronic disease and cancer"
 card  = "When and how to screen, monitor, treat and follow up patients with cancer and other chronic conditions."
 text  = "This work asks when and how to screen, monitor, treat and follow up patients across the course of a disease, in cancer and other chronic conditions. It develops decision models that tailor the timing and modality of interventions to each patient's risk, balancing earlier detection and better outcomes against the burden and cost of care."
+applications = ["Cancer recurrence monitoring", "Dialysis planning", "Cystic fibrosis"]
 
 [[theme]]
 title = "The organisation of care"
 card  = "Clinician workload, new models of care and decision support for complex clinical decisions."
 text  = "This strand studies how healthcare is organised and delivered: the pressures on clinicians and care teams, new models of care, and decision support for complex clinical decisions. The aim is care that is efficient, sustainable and accessible, for patients and for the people who deliver it."
+applications = ["Primary care", "Medical scribes", "Emergency surgery", "Organ transplantation"]
 
 # "Current directions" list on the Research page.
 
 [[theme]]
 title = "The value of medical innovations"
 card  = "Cost-effectiveness of new medicines, devices, diagnostics and models of care, especially in diabetes."
-text  = "Cost-effectiveness and decision models estimate how new technologies affect lifetime health outcomes and costs. Studies cover continuous glucose monitoring and insulin pumps, genetic testing for monogenic diabetes, shared telemedicine appointments for young adults with type 1 diabetes, first-line diabetes medicines, and a new multi-ethnic model of type 2 diabetes outcomes in the US. Several of these studies have been taken up in guidelines, payer resources and practice; see [Impact](impact.html)."
+text  = "This work evaluates new medicines, devices, diagnostics and models of care: how they change patients' long-term health outcomes and costs, and whether they offer good value for patients and health systems. Several of these studies have been taken up in guidelines, payer resources and practice; see [Impact](impact.html)."
+applications = ["Diabetes technologies", "Diabetes medicines", "Genetic testing", "Telemedicine"]
 
 [[direction]]
 title = "Decision support for heart transplantation."

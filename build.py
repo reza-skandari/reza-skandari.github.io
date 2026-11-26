@@ -251,8 +251,14 @@ def home(site, research):
 
 
 def research_page(site, research):
-    themes = "\n\n".join(f"<section>\n<h2>{html.escape(t['title'])}</h2>\n<p>{md(t['text'])}</p>\n</section>"
-                         for t in research["theme"])
+    def theme(t):
+        apps = ""
+        if t.get("applications"):
+            apps = ('\n<div class="apps"><span class="apps-label">Applications</span>'
+                    '<ul class="tags small-tags">' + "".join(f"<li>{html.escape(a)}</li>" for a in t["applications"])
+                    + "</ul></div>")
+        return f"<section>\n<h2>{html.escape(t['title'])}</h2>\n<p>{md(t['text'])}</p>{apps}\n</section>"
+    themes = "\n\n".join(theme(t) for t in research["theme"])
     preprints = sorted(read_bib(CONTENT / "preprints.bib"), key=sort_key)
     note = (f'<p class="small">Recent publications are on the <a href="index.html#publications">home page</a>; '
             f'the full list is on my <a href="{html.escape(site["full_publication_list"])}">Imperial profile</a>.</p>')

@@ -163,6 +163,13 @@ p + p { margin-top: 10px; }
   color: var(--text);
 }
 
+/* Applications under each research theme */
+.apps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 12px; }
+.apps-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
+}
+.small-tags li { font-size: 12px; padding: 2px 9px; }
+
 /* ── Cards ── */
 .card {
   background: var(--surface);
