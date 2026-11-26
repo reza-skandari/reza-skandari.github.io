@@ -2,17 +2,22 @@
 # Text fields accept [link text](https://...) for links and *text* for italics.
 
 heading = "Better decisions for healthcare"
-intro = "My research brings decision analytics, optimisation, machine learning and health economics to four connected problems. The work is collaborative, with clinicians, health economists and data scientists at Imperial, in the NHS and at universities in the United States."
+intro = "My research brings decision analytics, optimisation, machine learning and health economics to five connected problems. The work is collaborative, with clinicians, health economists and data scientists at Imperial, in the NHS and at universities in the United States."
 
 [[theme]]
 title = "Personalised and stratified care"
 card  = "Treatment plans that learn from each patient's data, and care designs that are tailored yet simple enough to implement."
-text  = "Clinical guidelines often treat patients alike, yet patients differ in how their disease progresses and how they respond to care. *Bayes-adaptive treatment design* learns about each patient's disease trajectory as data accumulate and adapts treatment accordingly. *Stratified care* groups patients so that care is tailored to clinically meaningful groups while remaining simple enough to implement. Applications include preparing patients with kidney disease for dialysis and risk-adapted follow-up after cancer treatment, where tailored schedules can detect recurrence earlier without additional scans."
+text  = "Clinical guidelines often treat patients alike, yet patients differ in how their disease progresses and how they respond to care. *Bayes-adaptive treatment design* learns about each patient's disease trajectory as data accumulate and adapts treatment accordingly. *Stratified care* groups patients so that care is tailored to clinically meaningful groups while remaining simple enough to implement. Applications include preparing patients with kidney disease for dialysis and tailoring follow-up after cancer treatment."
 
 [[theme]]
 title = "Designing care for chronic disease"
-card  = "When and how to monitor, screen and intervene in conditions such as kidney disease, cancer and cystic fibrosis."
-text  = "This work asks when and how to monitor, screen and intervene. Examples include the timing of vascular access for patients approaching dialysis, surveillance for cancer recurrence combining imaging with blood tests for tumour DNA, and screening for hearing loss in people with cystic fibrosis."
+card  = "When and how to monitor, screen and intervene in conditions such as kidney disease and cystic fibrosis."
+text  = "This work asks when and how to monitor, screen and intervene. Examples include the timing of vascular access for patients approaching dialysis and screening for hearing loss in people with cystic fibrosis."
+
+[[theme]]
+title = "Cancer surveillance and care"
+card  = "When and how to follow patients after cancer treatment, tailoring scans and blood tests for tumour DNA to each patient's risk."
+text  = "After treatment, patients are monitored for years to detect cancer recurrence. Earlier detection improves outcomes, but frequent scans are costly and burdensome. This work designs risk-adapted surveillance: decision models that tailor follow-up schedules to each patient's risk of recurrence, and strategies that combine imaging with blood tests for circulating tumour DNA (ctDNA), which can signal recurrence without radiation but cannot locate the tumour. In head and neck cancer, tailored schedules can detect recurrence earlier without additional scans."
 
 [[theme]]
 title = "The value of medical innovations"
