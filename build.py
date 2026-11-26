@@ -189,10 +189,8 @@ def authors(field):
 
 def pub_item(e, working=False):
     title = tex(e.get("title", "")).rstrip(".")
-    if working:   # working papers: authors, year and a title linked to the posted paper
-        url = e.get("url") or (f'https://doi.org/{e["doi"]}' if e.get("doi") else "")
-        t = f'<a href="{html.escape(url)}">{title}</a>' if url else title
-        return f'<li>{authors(e.get("author", ""))} ({e.get("year", "")}). <span class="pub-title">{t}.</span></li>'
+    if working:   # working papers: authors, year and title only, no links
+        return f'<li>{authors(e.get("author", ""))} ({e.get("year", "")}). <span class="pub-title">{title}.</span></li>'
 
     parts = [f'{authors(e.get("author", ""))} ({e.get("year", "")}).',
              f'<span class="pub-title">{title}.</span>']
