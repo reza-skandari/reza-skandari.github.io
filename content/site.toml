@@ -31,7 +31,7 @@ photo    = "headshot.jpg"
 photo_2x = "headshot-2x.jpg"
 
 about = [
-  "His research asks how data and analytical methods can improve healthcare decisions for patients, clinicians, managers and policymakers. He develops methods in decision analytics, optimisation, machine learning and health economics, and applies them with clinical partners to chronic disease, cancer, organ transplantation and the organisation of care.",
+  "Reza is an Assistant Professor of Health Analytics and Operations at Imperial College Business School. His research asks how data and analytical methods can improve healthcare decisions for patients, clinicians, managers and policymakers. He develops methods in decision analytics, optimisation, machine learning and health economics, and applies them with clinical partners to chronic disease, cancer, organ transplantation and the organisation of care.",
   "Reza is a member of the [Centre for Health Economics & Policy Innovation](https://www.imperial.ac.uk/business-school/faculty-research/research-centres/centre-health-economics-policy-innovation/) (CHEPI). Before joining Imperial in 2018, Reza was a Senior Research Analyst in the Department of Medicine at the University of Chicago, and received a PhD from the Sauder School of Business at the University of British Columbia.",
 ]
 
@@ -45,4 +45,4 @@ interests = [
   "Healthcare operations",
 ]
 
-prospective_students = "I welcome enquiries from prospective doctoral students with a strong background in statistics, machine learning, reinforcement learning or stochastic optimisation, who are interested in applying these methods to problems in healthcare. Please email me with a short description of your interests and background, and your CV."
+prospective_students = "I welcome enquiries from prospective doctoral students with strong quantitative foundations and an interest in reinforcement learning, especially its methodological and conceptual foundations and its use in sequential decision-making under uncertainty. Potential applications include healthcare, where decisions must adapt as information about patients and their needs accumulates. Backgrounds in statistics, optimisation, decision theory, machine learning or stochastic modelling are also welcome. Please email me with a short description of your interests and background, and your CV."

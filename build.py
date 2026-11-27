@@ -296,7 +296,8 @@ def teaching_page(teaching):
              f"<section>\n<h2>Current modules</h2>\n{modules(teaching['current'])}\n</section>"]
     if teaching.get("previous"):
         parts.append(f"<section>\n<h2>Previous modules</h2>\n{modules(teaching['previous'])}\n</section>")
-    parts.append(f"<section>\n<h2>Approach</h2>\n{paragraphs(teaching['approach'])}\n</section>")
+    if teaching.get("approach"):
+        parts.append(f"<section>\n<h2>Approach</h2>\n{paragraphs(teaching['approach'])}\n</section>")
     if teaching.get("award"):
         parts.append(f"<section>\n<h2>Recognition</h2>\n{item_list(teaching['award'])}\n</section>")
     return "Teaching", "\n\n".join(parts)
