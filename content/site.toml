@@ -18,6 +18,7 @@ email = "r.skandari@imperial.ac.uk"
 links = [
   { label = "Imperial profile", url = "https://profiles.imperial.ac.uk/r.skandari" },
   { label = "Google Scholar",   url = "https://scholar.google.com/citations?user=1Xc--mwAAAAJ&hl=en" },
+  { label = "Academic CV",      url = "assets/skandari-acad-cv.pdf" },
 ]
 
 # Where "Full publication list" points.
